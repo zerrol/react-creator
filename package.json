@@ -1,0 +1,40 @@
+{
+  "name": "react-creater",
+  "version": "1.0.0",
+  "description": "react quick start",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerrol/react-creater.git"
+  },
+  "author": "FRozen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zerrol/react-creater/issues"
+  },
+  "homepage": "https://github.com/zerrol/react-creater#readme",
+  "dependencies": {
+    "core-js": "2",
+    "css-loader": "^3.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "style-loader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime-corejs2": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
