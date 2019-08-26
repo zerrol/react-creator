@@ -6,7 +6,6 @@ export default () => {
     <div>
       <h3 className={style.hello}> 
         hello, react home
-        赵傻子妖
       </h3>
       <p>
         welcome to react creater
