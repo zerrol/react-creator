@@ -1,9 +1,9 @@
 import React from 'react'
-import style from './style.css'
+import style from './style.scss'
 
 export default () => {
   return (
-    <div>
+    <div className={style.container}>
       <h3 className={style.hello}> 
         hello, react home
       </h3>
