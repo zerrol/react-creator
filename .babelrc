@@ -15,11 +15,13 @@
     "@babel/preset-react"
   ], 
   "plugins": [
+    // 解决在class中直接写入属性报错
+    "@babel/plugin-proposal-class-properties",
     [
       "@babel/plugin-transform-runtime",
       {
         "corejs": 2
       }
-    ]
+    ],
   ]
 }

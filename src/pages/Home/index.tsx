@@ -1,13 +1,20 @@
 import React from 'react'
 import style from './style.scss'
+import Button from './Button';
 
 interface User {
-  name: String
+  name: string,
+  sex: string,
+  age: number,
+
+  readonly [key: string]: string | number
 }
 
 export default () => {
   let user: User = {
-    name: 'jackson'
+    name: 'wow',
+    sex: 'man',
+    age: 18,
   }
 
   return (
@@ -16,8 +23,11 @@ export default () => {
         hello, react {user.name}
       </h3>
       <p className={style.border}>
-        welcome to react creater home
+        <span>
+          welcome to react creater home
+        </span>
       </p>
+      <Button />
     </div>
   )
 }
