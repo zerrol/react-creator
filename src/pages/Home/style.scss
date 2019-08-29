@@ -2,9 +2,14 @@
 .container {
   color: #666;
   display: flex;
-  
+  flex-direction: column; 
+
   .hello {
     color: red;
+  }
+
+  .border {
+    border: 1px solid #333;
   }
 }
 

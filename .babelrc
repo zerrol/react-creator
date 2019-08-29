@@ -11,6 +11,7 @@
         "corejs": 2
       }, 
     ],
+    "@babel/preset-typescript",
     "@babel/preset-react"
   ], 
   "plugins": [

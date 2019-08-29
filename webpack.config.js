@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const INDEX_ENTRY = path.resolve(__dirname, './src/index.js')
+const INDEX_ENTRY = path.resolve(__dirname, './src/index.tsx')
 const MODULES = path.resolve(__dirname, './node_modules')
 const TEMPLATES = path.resolve(__dirname, './src/assets/templates/index.html')
 const DEV_OUTPUT = path.join(__dirname, "./dist")
@@ -19,10 +19,14 @@ module.exports = {
     filename: '[name].bundle.js'
   },
 
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+  },
+
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(t|j)sx?$/,
         exclude: MODULES,
         use: ['babel-loader']
       },
@@ -32,11 +36,13 @@ module.exports = {
         use: [
           'style-loader', 
           {
-            loader: 'css-loader',
+            loader: 'typings-for-css-modules-loader',
             options: {
-              modules: {
-                localIdentName: '[local]__[path]__[hash:base64:5]]'  // css module
-              }
+              modules: true,
+              sass: true,
+              namedExport: true,
+              camelCase: true,
+              localIdentName: '[local]__[path]__[hash:base64:5]]'  // css module
             }
           },
           'postcss-loader',
