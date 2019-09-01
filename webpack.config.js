@@ -62,6 +62,7 @@ module.exports = {
       hash: true
     })
   ],
+  devtool:"cheap-module-eval-source-map",
 
   devServer: {
     contentBase: DEV_OUTPUT,
