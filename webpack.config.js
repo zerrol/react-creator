@@ -1,5 +1,6 @@
 const path = require('path') 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebapckDashboardPlugin = require('webpack-dashboard/plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const INDEX_ENTRY = path.resolve(__dirname, './src/index.tsx')
@@ -53,6 +54,8 @@ module.exports = {
   },
 
   plugins: [
+    // 优化控制台输出
+    new WebapckDashboardPlugin(),
     // 每次打包前清除dist
     new CleanWebpackPlugin(),
     // 生成html模板
@@ -66,6 +69,11 @@ module.exports = {
 
   devServer: {
     contentBase: DEV_OUTPUT,
+    historyApiFallback: true, // 404重定向
+    proxy: {
+      // 代理到后端的服务地址，会拦截所有以api开头的请求地址
+      "/api": "http://localhost:3000"
+    }
   },
 
 }
