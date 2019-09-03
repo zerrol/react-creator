@@ -1,11 +1,12 @@
-
 import React, { Component } from 'react'
+import {queryTest} from '@api'
 
 export default class extends Component {
   say: string = 'hello world'
   
-  handleClick = () => {
-    alert(this.say)
+  handleClick = async () => {
+    const {message} = await queryTest()
+    alert(message)
   }
 
   render() {

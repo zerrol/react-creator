@@ -1,6 +1,5 @@
 const path = require('path') 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const WebapckDashboardPlugin = require('webpack-dashboard/plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const INDEX_ENTRY = path.resolve(__dirname, './src/index.tsx')
@@ -21,7 +20,10 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    alias: {
+      '@api': path.join(__dirname, 'src/api')
+    }
   },
 
   module: {
@@ -54,8 +56,6 @@ module.exports = {
   },
 
   plugins: [
-    // 优化控制台输出
-    new WebapckDashboardPlugin(),
     // 每次打包前清除dist
     new CleanWebpackPlugin(),
     // 生成html模板
