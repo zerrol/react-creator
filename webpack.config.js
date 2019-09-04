@@ -12,7 +12,6 @@ module.exports = {
 
   entry: {
     main: INDEX_ENTRY,
-    vendor: ['react', 'react-dom', 'react-router']
   },
 
   output: {
@@ -53,6 +52,14 @@ module.exports = {
         ]
       }
     ]
+  },
+
+  optimization: {
+    // 自动拆分node_modules代码
+    splitChunks: {
+      chunks: 'all'
+    },
+    runtimeChunk: true
   },
 
   plugins: [

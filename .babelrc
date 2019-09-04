@@ -7,6 +7,7 @@
         "targets": {
           "browsers": ["> 1%", "last 2 versions"]
         },
+        // 按需加载polyfill
         "useBuiltIns": "usage",
         "corejs": 2
       }, 
