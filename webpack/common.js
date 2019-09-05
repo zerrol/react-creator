@@ -2,13 +2,17 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
+const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
 const MODULES = path.resolve(__dirname, '../node_modules')
 const TEMPLATES = path.resolve(__dirname, '../src/assets/templates/index.html')
 
 module.exports = {
 
   entry: {
+    // 主入口
     main: INDEX_ENTRY,
+    // mock可以做为另一个入口
+    mock: MOCK_ENTRY
   },
 
   output: {
@@ -56,7 +60,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
-    runtimeChunk: true
+    runtimeChunk: 'single'
   },
 
   plugins: [
