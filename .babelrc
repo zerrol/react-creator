@@ -4,6 +4,8 @@
     [
       "@babel/preset-env", 
       {
+        // tree shacking 只支持 es6 module 模式
+        "modules": false,
         "targets": {
           "browsers": ["> 1%", "last 2 versions"]
         },
