@@ -1,5 +1,6 @@
 const path = require('path') 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
 const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
@@ -37,7 +38,8 @@ module.exports = {
         test: /\.scss|\.css$/,
         exclude: MODULES,
         use: [
-          'style-loader', 
+          // prod需要拆分loader，这里无法通过merge进行自动合并
+          process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 
           {
             loader: 'typings-for-css-modules-loader',
             options: {

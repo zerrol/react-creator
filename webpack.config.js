@@ -9,4 +9,6 @@ if(process.env.NODE_ENV === 'production') {
   config = require('./webpack/prod')
 }
 
-module.exports = merge(commonConfig, config)
+config = merge.smart(commonConfig, config)
+// console.log(config.module.rules)
+module.exports = config
