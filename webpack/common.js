@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
 const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
 const MODULES = path.resolve(__dirname, '../node_modules')
-const TEMPLATES = path.resolve(__dirname, '../src/assets/templates/index.html')
+const TEMPLATES = path.resolve(__dirname, '../assets/templates/index.html')
 
 module.exports = {
 
@@ -23,7 +23,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
-      '@api': path.join(__dirname, '../src/api')
+      '@api': path.join(__dirname, '../src/api'),
+      '@assets': path.join(__dirname, '../assets')
     }
   },
 
@@ -53,7 +54,24 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10 * 1024,
+            name: 'img/[name]__[hash:base64:5].[ext]',
+            outputPath: 'images/'
+          }
+        },
+        exclude: MODULES
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        use: [{ loader: 'file-loader?name=font/[name]__[hash:base64:5].[ext]' }],
+        exclude: MODULES
+      },
     ]
   },
 
