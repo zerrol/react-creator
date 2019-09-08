@@ -61,8 +61,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             limit: 10 * 1024,
-            name: 'img/[name]__[hash:base64:5].[ext]',
-            outputPath: 'images/'
+            name: 'images/[name]__[hash:base64:5].[ext]',
           }
         },
         exclude: MODULES
