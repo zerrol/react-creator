@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
 const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
 const MODULES = path.resolve(__dirname, '../node_modules')
-const TEMPLATES = path.resolve(__dirname, '../assets/templates/index.html')
+const TEMPLATES = path.resolve(__dirname, '../public/index.html')
 
 module.exports = {
 
@@ -24,7 +24,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     alias: {
       '@api': path.join(__dirname, '../src/api'),
-      '@assets': path.join(__dirname, '../assets')
+      '@assets': path.join(__dirname, '../src/assets')
     }
   },
 

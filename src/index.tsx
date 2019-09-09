@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './router'
+import App from './routes'
 import {render} from 'react-dom'
 
 render(
