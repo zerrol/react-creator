@@ -1,6 +1,7 @@
 const path = require('path') 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HappyPack = require('happypack')
 
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
 const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
@@ -33,7 +34,7 @@ module.exports = {
       {
         test: /\.(t|j)sx?$/,
         exclude: MODULES,
-        use: ['babel-loader']
+        use: ['happypack/loader?id=babel']
       },
       {
         test: /\.scss|\.css$/,
@@ -83,6 +84,11 @@ module.exports = {
   },
 
   plugins: [
+    // 多线程打包
+    new HappyPack({
+      id: 'babel',
+      loaders: ['babel-loader'] 
+    }),
     // 生成html模板
     new HtmlWebpackPlugin({
       filename: 'index.html',
