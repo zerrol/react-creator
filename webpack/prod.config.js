@@ -10,8 +10,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     // 分离css文件
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css'
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css'
     })
   ]
 }

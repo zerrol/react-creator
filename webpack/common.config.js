@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.(t|j)sx?$/,
         exclude: MODULES,
-        use: ['happypack/loader?id=babel']
+        use: 'happypack/loader?id=babel'
       },
       {
         test: /\.scss|\.css$/,
@@ -42,18 +42,8 @@ module.exports = {
         use: [
           // prod需要拆分loader，这里无法通过merge进行自动合并
           process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 
-          {
-            loader: 'typings-for-css-modules-loader',
-            options: {
-              modules: true,
-              sass: true,
-              namedExport: true,
-              camelCase: true,
-              localIdentName: '[local]__[path]__[hash:base64:5]]'  // css module
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
+          // happypack 不支持minicss所以需要分开写
+          'happypack/loader?id=sass'
         ]
       },
       {
@@ -88,6 +78,24 @@ module.exports = {
     new HappyPack({
       id: 'babel',
       loaders: ['babel-loader'] 
+    }),
+    // css
+    new HappyPack({
+      id: 'sass',
+      loaders: [
+        {
+          loader: 'typings-for-css-modules-loader',
+          options: {
+            modules: true,
+            sass: true,
+            namedExport: true,
+            camelCase: true,
+            localIdentName: '[local]__[path]__[hash:base64:5]]'  // css module
+          }
+        },
+        'postcss-loader',
+        'sass-loader'
+      ]
     }),
     // 生成html模板
     new HtmlWebpackPlugin({
