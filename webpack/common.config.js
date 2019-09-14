@@ -77,7 +77,7 @@ module.exports = {
     // 多线程打包
     new HappyPack({
       id: 'babel',
-      loaders: ['babel-loader'] 
+      loaders: ['babel-loader?cacheDirectory'] 
     }),
     // css
     new HappyPack({
