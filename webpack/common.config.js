@@ -36,6 +36,7 @@ module.exports = {
         exclude: MODULES,
         use: 'happypack/loader?id=babel'
       },
+    
       {
         test: /\.scss|\.css$/,
         exclude: MODULES,
