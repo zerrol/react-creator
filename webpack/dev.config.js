@@ -5,7 +5,7 @@ const SRC = path.join(__dirname, '../src')
 module.exports = {
   mode: 'development',
 
-  devtool:"cheap-module-eval-source-map",
+  devtool: "cheap-module-eval-source-map",
 
   module: {
     rules:[
