@@ -9,7 +9,10 @@ export default () =>  {
   }
 
   return(
-    <button onClick={handleClick}>hello</button>
+    <>
+      <div>btn area</div>
+      <button onClick={handleClick}>hello</button>
+    </>
   )
  
 }
