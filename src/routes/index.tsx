@@ -1,8 +1,10 @@
+import {hot} from 'react-hot-loader/root'
 import React from 'react'
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
+
 import routes from './routes'
 
-export default () => {
+const App = () => {
   return (
     <HashRouter>
       <Switch>
@@ -18,3 +20,6 @@ export default () => {
   )
 
 }
+
+// 根节点包裹hot实现热更新
+export default hot(App)

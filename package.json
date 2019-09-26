@@ -4,7 +4,7 @@
   "description": "react quick start",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack",
     "eslint": "eslint src --ext .ts,.tsx"
   },
@@ -42,8 +42,8 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router": "^5.0.3",
     "@types/react-router-dom": "^4.3.5",
-    "@typescript-eslint/parser": "^2.2.0",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
     "babel-loader": "^8.0.6",
     "cache-loader": "^4.1.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -60,6 +60,7 @@
     "node-sass": "^4.12.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
+    "react-hot-loader": "^4.12.14",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "typescript": "^3.5.3",
