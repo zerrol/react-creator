@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import style from './style.scss'
 import Button from './Button'
 import tsLogo from '@assets/images/ts_logo.jpeg'
@@ -12,10 +12,20 @@ interface User {
 }
 
 export default () => {
-  let user: User = {
+
+  let [user, setUser] = useState({
     name: 'wow',
     sex: 'man',
     age: 18,
+  })
+
+  let handleClick = () => {
+    setUser(
+      { 
+        ...user,
+        name: 'gua'
+      }
+    )
   }
 
   return (
@@ -30,7 +40,7 @@ export default () => {
       </p>
       <div>
         <img src={tsLogo}/>
-        <Button />
+        <Button onClick={handleClick}/>
       </div> 
     </div>
   )

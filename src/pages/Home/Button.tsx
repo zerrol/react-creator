@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {queryTest} from '@api'
 
-export default () =>  {
+interface ButtonProps {
+  onClick: Function
+}
+
+export default ({onClick}: ButtonProps) =>  {
 
   let handleClick = async () => {
     const {message} = await queryTest()
     alert(message)
+
+    onClick()
   }
 
   return(
