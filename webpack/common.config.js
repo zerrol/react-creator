@@ -18,7 +18,8 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].bundle.js'
+    filename: 'js/[name].bundle.js',
+    // todo chunkFileName 按需加載
   },
 
   resolve: {
