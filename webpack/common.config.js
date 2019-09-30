@@ -42,8 +42,6 @@ module.exports = {
         test: /\.scss|\.css$/,
         exclude: MODULES,
         use: [
-          // css-loader/style-loader 原生不支持缓存，可以使用cache-loader
-          'cache-loader',
           // prod需要拆分loader，这里无法通过merge进行自动合并
           process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 
           // happypack 不支持minicss所以需要分开写
