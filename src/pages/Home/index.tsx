@@ -2,7 +2,7 @@ import React from 'react'
 import tsLogo from '@assets/images/ts_logo.jpeg'
 import Button from './Button'
 
-import style from './style.scss'
+import style from './style.less'
 
 interface User {
   name: string,

@@ -2,4 +2,5 @@ node_modules
 dist
 .DS_Store
 *.scss.d.ts
+*.less.d.ts
 *.css.d.ts

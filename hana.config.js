@@ -1,8 +1,10 @@
 var AutoPrefixer = require('autoprefixer')
 module.exports = {
-  plugins: [
-    AutoPrefixer({
+
+  postcss: {
+    autoprefixer: AutoPrefixer({
       browsers: ['last 2 versions']
     })
-  ]
+  }
+
 }
