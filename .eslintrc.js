@@ -23,6 +23,14 @@ module.exports = {
   rules: {
       // 这里填入你的项目需要的个性化配置
       // 是否必须声明类中作用 private、public...
-      // "@typescript-eslint/explicit-member-accessibility": "off",
+      "@typescript-eslint/explicit-member-accessibility": "off",
+      "no-unused-expressions": 0,
+      "no-invalid-this": "off",
+      "@typescript-eslint/no-invalid-this": "off",
+      "@typescript-eslint/no-require-imports": "off",
+      // "react-hooks/rules-of-hooks": "error",
+      // "react-hooks/exhaustive-deps": "error",
+      "@typescript-eslint/explicit-member-accessibility": ['error', { accessibility: 'no-public' }],
+      "semi": ["error", "never"],
   }
 };

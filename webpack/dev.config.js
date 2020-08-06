@@ -16,7 +16,7 @@ module.exports = {
         use: {
           loader: 'eslint-loader',
           options: {
-            cache: true
+            // cache: true
           }
         }
       },
