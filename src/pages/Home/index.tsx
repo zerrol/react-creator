@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import tsLogo from '@assets/images/ts_logo.jpeg'
 import Button from './Button'
 

@@ -1,10 +1,17 @@
-var AutoPrefixer = require('autoprefixer')
 module.exports = {
 
+  // 通过 webpack define plugin 定义全局变量
+  // define: {
+  //   'process.env': {
+  //     HTTP_ENV: 'release7'
+  //   }
+  // },
+  // devtoolProd: 'cheap-module-eval-source-map',
+
   postcss: {
-    autoprefixer: AutoPrefixer({
-      browsers: ['last 2 versions']
-    })
+    autoprefixer: {
+      overrideBrowserslist: ['last 2 versions']
+    }
   }
 
 }

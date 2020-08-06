@@ -1,9 +1,15 @@
 module.exports = {
-  // AlloyTeam eslint规则 github: https://github.com/AlloyTeam/eslint-config-alloy#typescript-react
+  // 使用腾讯alloy team的eslint规范: https://github.com/AlloyTeam/eslint-config-alloy#typescript-react
+  ignorePatterns: [
+    "node_modules",
+  ],
   extends: [
     'alloy',
     'alloy/react',
     'alloy/typescript',
+  ],
+  plugins: [
+    // 'react-hooks'
   ],
   env: {
       // 这里填入你的项目用到的环境
@@ -12,17 +18,23 @@ module.exports = {
       // browser: true,
       // node: true,
       // jest: true,
-      // jquery: true
   },
   globals: {
       // 这里填入你的项目需要的全局变量
       // false 表示这个全局变量不允许被重新赋值，比如：
       //
-      // myGlobal: false
   },
   rules: {
       // 这里填入你的项目需要的个性化配置
       // 是否必须声明类中作用 private、public...
-      // "@typescript-eslint/explicit-member-accessibility": "off",
+      // 因为main中需要用require
+      "no-unused-expressions": 0,
+      "no-invalid-this": "off",
+      "@typescript-eslint/no-invalid-this": "off",
+      "@typescript-eslint/no-require-imports": "off",
+      // "react-hooks/rules-of-hooks": "error",
+      // "react-hooks/exhaustive-deps": "error",
+      "@typescript-eslint/explicit-member-accessibility": ['error', { accessibility: 'no-public' }],
   }
-};
+}
+
