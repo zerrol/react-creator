@@ -9,7 +9,7 @@ module.exports = {
     'alloy/typescript',
   ],
   plugins: [
-    // 'react-hooks'
+    'react-hooks'
   ],
   env: {
       // 这里填入你的项目用到的环境
@@ -32,8 +32,8 @@ module.exports = {
       "no-invalid-this": "off",
       "@typescript-eslint/no-invalid-this": "off",
       "@typescript-eslint/no-require-imports": "off",
-      // "react-hooks/rules-of-hooks": "error",
-      // "react-hooks/exhaustive-deps": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
       "@typescript-eslint/explicit-member-accessibility": ['error', { accessibility: 'no-public' }],
   }
 }

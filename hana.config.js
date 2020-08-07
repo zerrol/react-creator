@@ -1,5 +1,4 @@
 module.exports = {
-
   // 通过 webpack define plugin 定义全局变量
   // define: {
   //   'process.env': {
@@ -10,8 +9,17 @@ module.exports = {
 
   postcss: {
     autoprefixer: {
-      overrideBrowserslist: ['last 2 versions']
-    }
-  }
+      overrideBrowserslist: ["last 2 versions"],
+    },
+  },
 
+  lessLoader: {
+    lessOptions: {
+      javascriptEnabled: true,
+      modifyVars: {
+        "primary-color": "red",
+        "border-radius": "4px",
+      },
+    },
+  },
 }

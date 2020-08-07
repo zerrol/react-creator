@@ -1,4 +1,4 @@
-import {hot} from 'react-hot-loader/root'
+import { hot } from 'react-hot-loader/root'
 import React from 'react'
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
 

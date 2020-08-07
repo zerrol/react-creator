@@ -3,6 +3,7 @@ import tsLogo from '@assets/images/ts_logo.jpeg'
 import Button from './Button'
 
 import style from './style.less'
+import { Input } from 'antd'
 
 interface User {
   name: string,
@@ -24,10 +25,8 @@ export default () => {
       <h3 className={style.hello}> 
         hello, react {user.name}
       </h3>
-      <p className={style.border}>
-        <span>
-          welcome to react creater home 
-        </span>
+      <p className={style.inputArea}>
+        <Input placeholder='hello world' />
       </p>
       <div>
         <img src={tsLogo}/>
