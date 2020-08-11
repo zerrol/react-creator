@@ -457,7 +457,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-syntax-dynamic-import@^7.8.0", "@babel/plugin-syntax-dynamic-import@^7.8.3":
+"@babel/plugin-syntax-dynamic-import@^7.8.0":
   version "7.8.3"
   resolved "https://registry.npm.taobao.org/@babel/plugin-syntax-dynamic-import/download/@babel/plugin-syntax-dynamic-import-7.8.3.tgz#62bf98b2da3cd21d626154fc96ee5b3cb68eacb3"
   integrity sha1-Yr+Ysto80h1iYVT8lu5bPLaOrLM=
@@ -8029,13 +8029,14 @@ react-dom@^16.9.0:
     prop-types "^15.6.2"
     scheduler "^0.15.0"
 
-"react-hana-service@file:.yalc/react-hana-service":
+react-hana-service@^0.0.8-alpha.0:
   version "0.0.8-alpha.0"
+  resolved "https://registry.npm.taobao.org/react-hana-service/download/react-hana-service-0.0.8-alpha.0.tgz#9552ad43cdbd33840794148fa437f8ff5fd282a7"
+  integrity sha1-lVKtQ829M4QHlBSPpDf4/1/Sgqc=
   dependencies:
     "@babel/core" "7.11.1"
     "@babel/plugin-proposal-class-properties" "7.10.4"
     "@babel/plugin-proposal-decorators" "7.10.5"
-    "@babel/plugin-syntax-dynamic-import" "^7.8.3"
     "@babel/plugin-transform-runtime" "7.11.0"
     "@babel/preset-env" "7.11.0"
     "@babel/preset-react" "7.10.4"

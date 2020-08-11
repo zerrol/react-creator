@@ -44,7 +44,7 @@ export default observer((props: any) =>  {
       <div>btn area {store.num}</div>
 
       {/* <Button type="primary" ghost className={styles.btn} onClick={handleClick}>hello</Button> */}
-      <Link to='/fly'> go to fly </Link>
+      {/* <Link to='/fly'> go to fly </Link> */}
 
       <Button type="primary" onClick={store.add} className={styles.btn}>add num</Button>
       <Button type="primary" onClick={store.delete}>delete num</Button>
