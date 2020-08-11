@@ -1,5 +1,5 @@
 import {
-  Home
+  Home,
 } from '../pages'
 
 export default [

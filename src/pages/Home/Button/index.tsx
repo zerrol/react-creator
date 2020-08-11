@@ -4,6 +4,7 @@ import { Button } from 'antd'
 import { useLocalStore, observer } from 'mobx-react'
 
 import styles from './style.less'
+import { Link } from 'react-router-dom'
 
 export default observer((props: any) =>  {
 
@@ -42,7 +43,8 @@ export default observer((props: any) =>  {
     <>
       <div>btn area {store.num}</div>
 
-      <Button type="primary" ghost className={styles.btn} onClick={handleClick}>hello</Button>
+      {/* <Button type="primary" ghost className={styles.btn} onClick={handleClick}>hello</Button> */}
+      <Link to='/fly'> go to fly </Link>
 
       <Button type="primary" onClick={store.add} className={styles.btn}>add num</Button>
       <Button type="primary" onClick={store.delete}>delete num</Button>

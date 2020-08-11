@@ -3,6 +3,7 @@ import React from 'react'
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 import routes from './routes'
+import asyncRoutes from './asyncRoutes'
 
 const App = () => {
   return (
@@ -15,6 +16,13 @@ const App = () => {
               <Route key={index} {...route} />
           )
         }
+        {
+          asyncRoutes.map(
+            (route, index) => 
+              <Route key={index} {...route} />
+          )
+        }
+
       </Switch>
     </HashRouter>
   )
