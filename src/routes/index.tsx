@@ -4,6 +4,7 @@ import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 import Container from '../container'
 
+
 const App = () => {
   return (
     <HashRouter>
@@ -18,3 +19,6 @@ const App = () => {
 
 // 根节点包裹hot实现热更新
 export default hot(App)
+
+export { default as routes } from './routes'
+export { default as asyncRoutes } from './asyncRoutes'

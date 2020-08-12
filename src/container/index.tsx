@@ -8,11 +8,9 @@ import {
   UploadOutlined,
 } from "@ant-design/icons"
 import { HashRouter, Redirect, Route, Switch, Link } from "react-router-dom"
-
-import routes from "../routes/routes"
-import asyncRoutes from "../routes/asyncRoutes"
 import { useLocalStore, useObserver } from "mobx-react"
 
+import { routes, asyncRoutes } from "@routes"
 import styles from "./styles.less"
 
 const { Header, Sider, Content } = Layout
