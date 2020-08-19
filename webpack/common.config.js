@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HappyPack = require('happypack')
+const TsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
 
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
 const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
@@ -41,6 +42,7 @@ module.exports = {
       {
         test: /\.scss|\.css$/,
         exclude: MODULES,
+        enforce: 'pre',
         use: [
           // prod需要拆分loader，这里无法通过merge进行自动合并
           process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 
@@ -85,20 +87,19 @@ module.exports = {
     new HappyPack({
       id: 'sass',
       loaders: [
+        'css-modules-typescript-loader',
         {
-          loader: 'typings-for-css-modules-loader',
+          loader: 'css-loader',
           options: {
             modules: true,
-            sass: true,
-            namedExport: true,
-            camelCase: true,
-            localIdentName: '[local]__[path]__[hash:base64:5]]'  // css module
-          }
+            localIdentName: '[local]__[path]__[hash:base64:5]]'
+          },
         },
         'postcss-loader',
         'sass-loader'
       ]
     }),
+    new TsCheckerPlugin(),
     // 生成html模板
     new HtmlWebpackPlugin({
       filename: 'index.html',

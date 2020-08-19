@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     // 每次打包前清除dist
     new CleanWebpackPlugin(),
-    new TerserWebpackPlugin()
+    new TerserWebpackPlugin(),
     // 分离css文件
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',

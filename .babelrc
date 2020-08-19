@@ -14,7 +14,12 @@
         "corejs": 3
       } 
     ],
-    "@babel/preset-typescript",
+    [
+      "@babel/preset-typescript", 
+      {
+        "onlyRemoveTypeImports": true
+      }
+    ],
     "@babel/preset-react"
   ], 
   "plugins": [
