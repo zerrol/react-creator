@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HappyPack = require('happypack')
+const TsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
 
 const INDEX_ENTRY = path.resolve(__dirname, '../src/index.tsx')
 const MOCK_ENTRY = path.resolve(__dirname, '../mock/index.ts')
@@ -18,7 +19,8 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].bundle.js'
+    filename: 'js/[name].bundle.js',
+    // todo chunkFileName 按需加載
   },
 
   resolve: {
@@ -40,9 +42,8 @@ module.exports = {
       {
         test: /\.less|\.css$/,
         exclude: MODULES,
+        enforce: 'pre',
         use: [
-          // css-loader/style-loader 原生不支持缓存，可以使用cache-loader
-          'cache-loader',
           // prod需要拆分loader，这里无法通过merge进行自动合并
           process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 
           {
@@ -92,13 +93,21 @@ module.exports = {
     }),
     // css
     // new HappyPack({
-    //   id: 'less',
+    //   id: 'sass',
     //   loaders: [
-    //     'css-loader',
+    //     'css-modules-typescript-loader',
+    //     {
+    //       loader: 'css-loader',
+    //       options: {
+    //         modules: true,
+    //         localIdentName: '[local]__[path]__[hash:base64:5]]'
+    //       },
+    //     },
     //     'postcss-loader',
-    //     'less-loader'
+    //     'sass-loader'
     //   ]
     // }),
+    new TsCheckerPlugin(),
     // 生成html模板
     new HtmlWebpackPlugin({
       filename: 'index.html',

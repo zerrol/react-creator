@@ -4,9 +4,9 @@ import axios, {AxiosInstance}  from 'axios'
 const BASE_URL = '/api'
 
 class HttpRequest {
-  public instance: AxiosInstance
+  instance: AxiosInstance
 
-  public constructor() {
+  constructor() {
     this.instance = axios.create({
       baseURL: `${BASE_URL}`
     })    
@@ -14,7 +14,7 @@ class HttpRequest {
     this.instanceBindInterceptor()
   }
 
-  public instanceBindInterceptor () {
+  instanceBindInterceptor () {
     const {instance} = this    
     instance.interceptors.response.use(
       (response) => {

@@ -2,7 +2,6 @@ import React from 'react'
 import style from './style.module.less'
 import Button from './Button'
 import tsLogo from '@assets/images/ts_logo.jpeg'
-
 interface User {
   name: string,
   sex: string,
@@ -25,7 +24,7 @@ export default () => {
       </h3>
       <p className={style.border}>
         <span>
-          welcome to react creater home
+          welcome to react creater home 
         </span>
       </p>
       <div>

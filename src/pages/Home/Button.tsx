@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {queryTest} from '@api'
 
 export default () =>  {
 
   let handleClick = async () => {
-    const {message} = await queryTest()
+    const response = await queryTest()
+    const message = response.data.message
     alert(message)
   }
 

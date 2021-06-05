@@ -11,19 +11,35 @@
         },
         // 按需加载polyfill
         "useBuiltIns": "usage",
-        "corejs": 2
+        "corejs": 3
       } 
     ],
-    "@babel/preset-typescript",
+    [
+      "@babel/preset-typescript", 
+      {
+        "onlyRemoveTypeImports": true
+      }
+    ],
     "@babel/preset-react"
   ], 
   "plugins": [
+    // 启用装饰器
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
     // 解决在class中直接写入属性报错
-    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
     [
       "@babel/plugin-transform-runtime",
       {
-        "corejs": 2
+        "corejs": 3
+      }
+    ],
+    [
+      // antd 按需加载
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": true
       }
     ]
   ]
