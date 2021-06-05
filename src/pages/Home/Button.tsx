@@ -1,5 +1,6 @@
 import React from 'react'
 import {queryTest} from '@api'
+import { Button } from 'antd'
 
 export default () =>  {
 
@@ -12,7 +13,7 @@ export default () =>  {
   return(
     <>
       <div>btn area</div>
-      <button onClick={handleClick}>hello</button>
+      <Button type='primary' onClick={handleClick}>hello</Button>
     </>
   )
  

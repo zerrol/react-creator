@@ -1,6 +1,9 @@
 import React from 'react'
-import App from './routes'
 import {render} from 'react-dom'
+import { ConfigProvider } from 'antd'
+import 'antd/dist/antd.less'
+
+import App from './routes'
 
 // function App() {
 //   return (
@@ -9,9 +12,8 @@ import {render} from 'react-dom'
 // }
 
 render(
-  <App />,
-  // <div>
-  //   <App/>
-  // </div>,
+  <ConfigProvider>
+    <App />
+  </ConfigProvider>, 
   document.getElementById('root')
 )

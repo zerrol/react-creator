@@ -35,6 +35,7 @@
         "corejs": 3
       }
     ]
+    // antd4 js可以通过tree shaking进行按需引入了，不再需要此插件
     // [
     //   // antd 按需加载
     //   "import",
