@@ -4,8 +4,10 @@
     [
       "@babel/preset-env", 
       {
-        // tree shacking 只支持 es6 module 模式
-        "modules": false,
+        // 将module配置为false, 将转为esm，tree shacking 只支持 es6 module 模式
+        // 但其实可以不用配置，babel会默认复制为‘auto’, 
+        // 他会检测如果是在bundle工具下, 例如webpack会自动转为es module
+        // "modules": "false",
         "targets": {
           "browsers": ["> 1%", "last 2 versions"]
         },
@@ -32,15 +34,15 @@
       {
         "corejs": 3
       }
-    ],
-    [
-      // antd 按需加载
-      "import",
-      {
-        "libraryName": "antd",
-        "libraryDirectory": "es",
-        "style": true
-      }
     ]
+    // [
+    //   // antd 按需加载
+    //   "import",
+    //   {
+    //     "libraryName": "antd",
+    //     "libraryDirectory": "es",
+    //     "style": true
+    //   }
+    // ]
   ]
 }

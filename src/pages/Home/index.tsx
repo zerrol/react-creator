@@ -2,6 +2,7 @@ import React from 'react'
 import style from './style.module.less'
 import Button from './Button'
 import tsLogo from '@assets/images/ts_logo.jpeg'
+import {isNil} from 'lodash'
 interface User {
   name: string,
   sex: string,

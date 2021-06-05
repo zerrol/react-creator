@@ -19,7 +19,7 @@ module.exports = {
   },
 
   output: {
-    filename: 'js/[name].bundle.js',
+    filename: 'js/[name]_[hash:8].bundle.js',
     // todo chunkFileName 按需加載
   },
 

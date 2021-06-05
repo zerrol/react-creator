@@ -28,7 +28,9 @@
     "maintained node versions"
   ],
   "dependencies": {
+    "@types/lodash-es": "^4.17.4",
     "axios": "^0.19.0",
+    "lodash-es": "^4.17.21",
     "mockjs": "^1.0.1-beta3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

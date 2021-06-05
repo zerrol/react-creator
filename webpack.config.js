@@ -10,5 +10,4 @@ if(process.env.NODE_ENV !== 'development') {
 }
 
 config = merge.smart(commonConfig, config)
-// console.log(config.module.rules)
 module.exports = config
