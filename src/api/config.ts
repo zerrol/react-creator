@@ -18,7 +18,7 @@ class HttpRequest {
     const {instance} = this    
     instance.interceptors.response.use(
       (response) => {
-        if (response && response.data) {
+        if (response?.data) {
           return Promise.resolve(response.data)
         } else {
           return Promise.reject(new Error('response not valid'))
