@@ -5,8 +5,8 @@ const merge = require('webpack-merge')
 let config = require('./webpack/dev.config')
 
 // 生产环境配置
-if(process.env.NODE_ENV === 'production') {
-  config = require('./webpack/prod.config')
+if(process.env.NODE_ENV !== 'development') {
+  config = require('./webpack/prod.config')(process.env.NODE_ENV  === 'analyze') 
 }
 
 config = merge.smart(commonConfig, config)

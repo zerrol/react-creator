@@ -15,7 +15,7 @@ module.exports = {
     // 主入口
     main: INDEX_ENTRY,
     // mock可以做为另一个入口
-    mock: MOCK_ENTRY
+    // mock: MOCK_ENTRY
   },
 
   output: {
