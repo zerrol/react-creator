@@ -4,7 +4,8 @@
   "description": "react quick start",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "start": "vite",
+    "start:webpack": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack",
     "build:analyze": "cross-env NODE_ENV=analyze webpack",
     "eslint": "eslint src --ext .ts,.tsx"
@@ -48,6 +49,7 @@
     "@babel/preset-typescript": "^7.10.4",
     "@babel/runtime-corejs3": "^7.11.2",
     "@types/axios": "^0.14.0",
+    "@types/node": "^15.12.1",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-router": "^5.0.3",
@@ -74,6 +76,7 @@
     "terser-webpack-plugin": "^4.1.0",
     "typescript": "^3.5.3",
     "url-loader": "^2.1.0",
+    "vite": "^2.3.6",
     "webpack": "4.46.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^3.3.2",

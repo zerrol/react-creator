@@ -24,7 +24,8 @@ export default () => {
       </h3>
       <p className={style.border}>
         <span>
-          welcome to react creater home 
+          welcome to react creater home 2
+          {/* define: {__ENV__} */}
         </span>
       </p>
       <div>
