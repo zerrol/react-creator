@@ -4,11 +4,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HappyPack = require("happypack");
 const TsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
 
-const INDEX_ENTRY = path.resolve(__dirname, "../src/index.tsx");
-const MOCK_ENTRY = path.resolve(__dirname, "../mock/index.ts");
-const MODULES = path.resolve(__dirname, "../node_modules");
-const SRC = path.resolve(__dirname, "../src");
-const TEMPLATES = path.resolve(__dirname, "../public/index.html");
+const INDEX_ENTRY = path.resolve(__dirname, "../../src/index.tsx");
+const MOCK_ENTRY = path.resolve(__dirname, "../../mock/index.ts");
+const MODULES = path.resolve(__dirname, "../../node_modules");
+const SRC = path.resolve(__dirname, "../../src");
+const TEMPLATES = path.resolve(__dirname, "../../public/index.html");
 
 const getCssConfig = ({ enableCssModule } = {enableCssModule: false}) => ({
   test: enableCssModule
@@ -57,8 +57,8 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
-      "@api": path.join(__dirname, "../src/api"),
-      "@assets": path.join(__dirname, "../src/assets"),
+      "@api": path.join(SRC, "api"),
+      "@assets": path.join(SRC, "assets"),
     },
   },
 

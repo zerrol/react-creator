@@ -1,6 +1,6 @@
 const path = require('path') 
-const DEV_OUTPUT = path.join(__dirname, "../dist")
-const SRC = path.join(__dirname, '../src')
+const DEV_OUTPUT = path.join(__dirname, "../../dist")
+const SRC = path.join(__dirname, '../../src')
 
 module.exports = {
   mode: 'development',
