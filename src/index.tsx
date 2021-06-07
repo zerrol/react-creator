@@ -1,19 +1,15 @@
 import React from 'react'
-import {render} from 'react-dom'
-import { ConfigProvider } from 'antd'
-import 'antd/dist/antd.less'
-
 import App from './routes'
+import {render} from 'react-dom'
+import 'mobx-react/batchingForReactDom'
 
-// function App() {
-//   return (
-//     <span>hello</span>
-//   )
-// }
+import zhCN from 'antd/lib/locale-provider/zh_CN'
+import { ConfigProvider  } from 'antd'
+import '@assets/css/index.global.less'
 
 render(
-  <ConfigProvider>
+  <ConfigProvider locale={zhCN} autoInsertSpaceInButton={false} >
     <App />
-  </ConfigProvider>, 
+  </ConfigProvider>,
   document.getElementById('root')
 )

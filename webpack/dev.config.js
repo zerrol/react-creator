@@ -23,6 +23,7 @@ module.exports = {
 
   devServer: {
     open: true,
+    hot: true,
     contentBase: DEV_OUTPUT,
     historyApiFallback: true, // 404重定向
     proxy: {

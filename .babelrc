@@ -29,6 +29,8 @@
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     // 解决在class中直接写入属性报错
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    // 按需加载
+    "@babel/plugin-syntax-dynamic-import",
     [
       "@babel/plugin-transform-runtime",
       {
