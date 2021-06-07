@@ -32,7 +32,7 @@
     "@types/loadable__component": "^5.13.0",
     "@types/lodash-es": "^4.17.4",
     "antd": "^4.16.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "lodash-es": "^4.17.21",
     "mobx": "^4.15.5",
     "mobx-react": "^6.2.5",
