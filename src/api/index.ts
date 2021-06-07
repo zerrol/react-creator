@@ -8,4 +8,4 @@ export interface ResponseData<T> {
 }
 
 export const queryTest = 
-  (params?: any) => http.get('/test', params)
+  (params?: any): AxiosPromise => http.get('/test', params)
