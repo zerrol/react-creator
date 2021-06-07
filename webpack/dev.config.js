@@ -1,6 +1,6 @@
 const path = require('path') 
-const DEV_OUTPUT = path.join(__dirname, "../../dist")
-const SRC = path.join(__dirname, '../../src')
+const DEV_OUTPUT = path.join(__dirname, "../dist")
+const SRC = path.join(__dirname, '../src')
 
 module.exports = {
   mode: 'development',
@@ -23,6 +23,7 @@ module.exports = {
 
   devServer: {
     open: true,
+    hot: true,
     contentBase: DEV_OUTPUT,
     historyApiFallback: true, // 404重定向
     proxy: {

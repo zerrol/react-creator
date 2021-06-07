@@ -1,13 +1,13 @@
-const commonConfig = require('./build/webpack/common.config')
+const commonConfig = require('./webpack/common.config')
 
 const merge = require('webpack-merge')
 
 // 开发环境配置
-let config = require('./build/webpack/dev.config')
+let config = require('./webpack/dev.config')
 
 // 生产环境配置
 if(process.env.NODE_ENV !== 'development') {
-  config = require('./build/webpack/prod.config')(process.env.NODE_ENV  === 'analyze') 
+  config = require('./webpack/prod.config')(process.env.NODE_ENV  === 'analyze') 
 }
 
 config = merge.smart(commonConfig, config)
