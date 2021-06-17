@@ -10,7 +10,7 @@ import {
 import { HashRouter, Redirect, Route, Switch, Link } from "react-router-dom"
 import { useLocalStore, useObserver } from "mobx-react"
 
-import { routes, asyncRoutes } from "@routes"
+import { routes, asyncRoutes } from "../routes"
 import styles from "./styles.module.less"
 
 const { Header, Sider, Content } = Layout
