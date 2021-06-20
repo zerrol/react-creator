@@ -1,32 +1,47 @@
 import React from "react"
-import { Layout, Menu } from "antd"
+import { Button, Layout, Menu } from "antd"
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons"
-import { HashRouter, Redirect, Route, Switch, Link } from "react-router-dom"
+import {
+  HashRouter,
+  Redirect,
+  Route,
+  Switch,
+  Link,
+  Router,
+} from "react-router-dom"
 import { useLocalStore, useObserver } from "mobx-react"
 
-import { routes, asyncRoutes } from "../routes"
 import styles from "./styles.module.less"
+import { AuthRoute, history, PageRouteProps } from "@router"
 
 const { Header, Sider, Content } = Layout
 
-export default () => {
+interface LayoutContainerProps {
+  routes: PageRouteProps[]
+}
+
+export default ({ routes }: LayoutContainerProps) => {
   const store = useLocalStore(() => ({
     collapsed: false,
     toggle() {
       store.collapsed = !store.collapsed
     },
+    logout() {
+      history.push('/login')
+    }
   }))
 
   return useObserver(() => (
     <Layout className={styles.container}>
       <Sider trigger={null} collapsible collapsed={store.collapsed}>
-        <div className={styles.logo} > demo </div>
+        <div className={styles.logo}> demo </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1" icon={<UserOutlined />}>
             <Link to="/home">Home</Link>
@@ -48,19 +63,19 @@ export default () => {
               onClick: store.toggle,
             }
           )}
+          <Button onClick={store.logout}>退出登录</Button>
         </Header>
-        <HashRouter>
+        <Router history={history}>
           <Switch>
-            <Redirect exact from="/" to="/home" />
-
-            {routes.map((route, index) => (
-              <Route key={index} {...route} />
-            ))}
-            {asyncRoutes.map((route, index) => (
-              <Route key={index} {...route} />
-            ))}
+            {routes.map((route) =>
+              route.pageOptions?.haveAuth ? (
+                <AuthRoute key={route.path?.toString()} {...route} />
+              ) : (
+                <Route key={route.path?.toString()} {...route} />
+              )
+            )}
           </Switch>
-        </HashRouter>
+        </Router>
       </Layout>
     </Layout>
   ))

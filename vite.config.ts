@@ -30,7 +30,8 @@ export default defineConfig({
     alias: {
       "@api": path.join(SRC, "api"),
       "@assets": path.join(SRC, "assets"),
-      "@routes": path.join(SRC, "routes"),
+      "@router": path.join(SRC, "router"),
+      "@common": path.join(SRC, "common"),
     },
   },
 })

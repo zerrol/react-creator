@@ -1,25 +1,36 @@
+import { RouteProps } from 'react-router-dom'
+import loadable from '@loadable/component'
+
 import PageHome from '../../Home'
-// import PageLogin from '../../Login'
+import PageLogin from '../../Login'
 
-export { default as asyncRoutes } from './asyncRoutes'
+interface PageRouteProps extends RouteProps {
+  pageOptions?: {
+    haveAuth?: boolean,
+    haveDefaultLayout?: boolean,
+  }
+}
 
-export const routes = [
+export const routes: PageRouteProps[] = [
   {
     path: '/home',
     component: PageHome,
-    // pageOptions: {
-    //   // 默认为true
-    //   haveAuth: true,
-    //   // 默认为true
-    //   haveDefaultLayout: true
-    // }
+    pageOptions: {
+      haveAuth: true,
+      haveDefaultLayout: true
+    }
   }, 
-  // {
-  //   path: '/login',
-  //   component: PageLogin,
-  //   pageOptions: {
-  //     haveAuth: false,
-  //     haveDefaultLayout: false
-  //   }
-  // }
+  {
+    path: '/login',
+    component: PageLogin,
+  },
+  { 
+    path: '/fly', 
+    // 按需加载的页面
+    component: loadable(() => import('../../fly')),
+    pageOptions: {
+      haveAuth: true,
+      haveDefaultLayout: true,
+    }
+  },
 ]

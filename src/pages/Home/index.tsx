@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react'
 import tsLogo from '@assets/images/ts_logo.jpeg'
-import Button from './Button'
+// import Button from './Button'
 
 import style from './style.module.less'
 import { Input } from 'antd'
+import { Button } from '@common/components'
 
 interface User {
   name: string,
