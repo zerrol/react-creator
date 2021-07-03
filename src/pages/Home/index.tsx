@@ -5,6 +5,8 @@ import tsLogo from '@assets/images/ts_logo.jpeg'
 import style from './style.module.less'
 import { Input } from 'antd'
 import { Button } from '@common/components'
+import HomeStore from './Store'
+import { useLocalObservable } from 'mobx-react'
 
 interface User {
   name: string,
@@ -14,6 +16,11 @@ interface User {
   readonly [key: string]: string | number
 }
 
+const VerifyStatus = {
+  PASS: 1
+  // ...
+}
+
 export default () => {
   let user: User = {
     name: 'wow',
@@ -21,9 +28,12 @@ export default () => {
     age: 18,
   }
 
+  const homeStore = useLocalObservable(() => new HomeStore())
+
   return (
     <div className={style.container}>
       <h3 className={style.hello}> 
+        hello homeStore.name {homeStore.name}
         hello, react {user.name}
       </h3>
       <p className={style.inputArea}>

@@ -6,7 +6,7 @@ import LayoutContainer from "./container/Layout"
 import BlankContainer from "./container/Blank"
 import { history, PageRouteProps } from "@router"
 import { routes } from "./routes"
-import { useLocation } from "react-router"
+import { Redirect, useLocation } from "react-router"
 import { isCurrentRouteInLayout } from "./util"
 
 const App = () => {

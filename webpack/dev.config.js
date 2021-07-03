@@ -5,21 +5,21 @@ const SRC = path.join(__dirname, '../src')
 module.exports = {
   mode: 'development',
 
-  // module: {
-  //   rules:[
-  //     {
-  //       test: /\.(t|j)sx?$/,
-  //       include: SRC,
-  //       enforce: 'pre',
-  //       use: {
-  //         loader: 'eslint-loader',
-  //         // options: {
-  //         //   cache: true
-  //         // }
-  //       }
-  //     },
-  //   ]
-  // },
+  module: {
+    rules:[
+      {
+        test: /\.(t|j)sx?$/,
+        include: SRC,
+        enforce: 'pre',
+        use: {
+          loader: 'eslint-loader',
+          // options: {
+          //   cache: true
+          // }
+        }
+      },
+    ]
+  },
 
   devServer: {
     open: true,

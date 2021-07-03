@@ -1,6 +1,6 @@
 import { AuthRoute, history, PageRouteProps } from "@router"
 import React from "react"
-import { Route, Router, Switch } from "react-router"
+import { Redirect, Route, Router, Switch } from "react-router"
 
 interface BlankContainerProps {
   routes: PageRouteProps[]
@@ -9,6 +9,7 @@ interface BlankContainerProps {
 export default ({ routes }: BlankContainerProps) => {
   return (
     <Router history={history}>
+      <Redirect from='/' to='/home'/>
       <Switch>
         {routes.map((route) =>
           route.pageOptions?.haveAuth ? (
